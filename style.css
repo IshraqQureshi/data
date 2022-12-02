@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    font-family: 'Arial';
+}
+
+.container {
+    max-width: 1600px;
+    margin: auto;
+}
+
+.dataTableWrapper {
+    padding: 40px 30px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 15%);
+    margin: 40px 0;
+    border-radius: 5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.dataTableTitle {
+    font-size: 24px;
+    margin: 0 0 20px;
+}
