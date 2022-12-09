@@ -1,6 +1,12 @@
 $(function(){
 
-    const slider = jQuery('.slider').slick();
+    const slider = jQuery('.slider').slick({
+        asNavFor: '.sliderNav'
+    });
+    const sliderNav = jQuery('.sliderNav').slick({
+        arrows: false,
+        asNavFor: '.slider'
+    });
 
     $('.slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         jQuery('.btn').each(function(){
@@ -47,5 +53,16 @@ $(function(){
 
     slider[0].slick.slickGoTo(0);
     
+
+
+    document.querySelectorAll( '.ciclegraph' ).forEach( ( ciclegraph )=>{
+        let circles = ciclegraph.querySelectorAll( '.circle' )
+        let angle = 360-90, dangle = 360 / circles.length
+        for( let i = 0; i < circles.length; ++i ){
+          let circle = circles[i]
+          angle += dangle
+          circle.style.transform = `rotate(${angle}deg) translate(${ciclegraph.clientWidth / 2}px) rotate(-${angle}deg)`
+        }
+      })
 
 })
